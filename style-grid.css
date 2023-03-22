@@ -1,0 +1,76 @@
+@supports (grid-area: auto) {
+    @media screen and (max-width:599px) {
+
+        .site {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            grid-template-rows: auto 0.1fr 0.1fr 0.1fr;
+
+            grid-template-areas:
+
+                "logo masthead masthead"
+
+                "extra title title"
+
+                "main extra extra"
+
+                "footer footer footer";
+
+        }
+
+
+        .masthead {
+            grid-area: masthead;
+        }
+
+        .page-title {
+            grid-area: title;
+        }
+
+        .main-content {
+            grid-area: main;
+        }
+
+        .portfolio-content {
+            grid-area: portfolio;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+        }
+
+        .footer-content {
+            grid-area: footer;
+        }
+
+        .extra-content {
+            grid-area: extra;
+        }
+
+        .logo-content {
+            grid-area: logo;
+        }
+    }
+
+
+    @media screen and (min-width: 600px) {
+        .site {
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            grid-template-rows: auto auto auto auto auto;
+            grid-template-areas:
+                /*I got the image to appear as it should next to the text in the beginning, 
+                but for the life of me I cannot get it to appear like that again after doing more work to the site. 
+                I genuinely have no idea where it went wrong and would love help with this. I also got the project 
+                images to not overlap with the info at one point, and also don't know where I went wrong with that either. */
+                "masthead masthead masthead"
+                "extra title title"
+                "extra sidebar sidebar"
+                "main main main"
+                "main footer footer";
+        }
+
+    }
+
+}

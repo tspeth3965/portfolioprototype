@@ -1,0 +1,302 @@
+/*--------------------------------------------------------------
+Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar */
+}
+
+/*--------------------------------------------------------------
+Typography
+--------------------------------------------------------------*/
+
+body {
+    margin: 0;
+    background-color: #90B494;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    font-family: 'Source Sans Pro', 'Helvetica', 'Arial', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+h1 {
+    width: 100%;
+    margin: 0 auto 0 auto;
+    font-family: 'Bad Script', cursive;
+    line-height: 280px;
+    font-size: 6rem;
+    padding: 20px;
+    text-align: center;
+    text-rendering: optimizeLegibility;
+}
+
+#text3d {
+    color: #fff;
+    letter-spacing: .15em;
+    text-shadow:
+        -1px -1px 1px #efede3,
+        0px 1px 0 #2e2e2e,
+        0px 2px 0 #2c2c2c,
+        0px 3px 0 #2a2a2a,
+        0px 4px 0 #282828,
+        0px 5px 0 #262626,
+        0px 6px 0 #242424,
+        0px 7px 0 #222,
+        0px 8px 0 #202020,
+        0px 9px 0 #1e1e1e,
+        0px 10px 0 #1c1c1c,
+        0px 11px 0 #1a1a1a,
+        0px 12px 0 #181818,
+        0px 13px 0 #161616,
+        0px 14px 0 #141414,
+        0px 15px 0 #121212,
+        2px 20px 5px rgba(0, 0, 0, 0.9),
+        5px 23px 5px rgba(0, 0, 0, 0.3),
+        8px 27px 8px rgba(0, 0, 0, 0.5),
+        8px 28px 35px rgba(0, 0, 0, 0.9);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    clear: both;
+}
+
+p {
+    margin-bottom: 1.5em;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+dfn,
+cite,
+em,
+i {
+    font-style: italic;
+}
+
+blockquote {
+    margin: 0 1.5em;
+}
+
+address {
+    margin: 0 0 1.5em;
+}
+
+pre {
+    display: inline-block;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    color: #ddca7e;
+    background: #282c34;
+    padding: .5em .8em;
+    border-radius: .2em;
+}
+
+code,
+kbd,
+tt,
+var {
+    font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr,
+acronym {
+    border-bottom: 1px dotted #666;
+    cursor: help;
+}
+
+mark,
+ins {
+    background: #fff9c0;
+    text-decoration: none;
+}
+
+sup,
+sub {
+    font-size: 75%;
+    height: 0;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    bottom: 1ex;
+}
+
+sub {
+    top: .5ex;
+}
+
+small {
+    font-size: 75%;
+}
+
+big {
+    font-size: 125%;
+}
+
+/* Global layouts */
+@media screen and (min-width: 700px) {
+    .two-column {
+        column-count: 2;
+        column-gap: 2.4em;
+    }
+}
+
+/* Global buttons */
+.content-button {
+    padding: .5em 1em;
+    border: 3px solid #B51C35;
+    /*border-radius: 10px;*/
+    font-weight: 600;
+}
+
+a.content-button {
+    color: black;
+    text-decoration: none;
+}
+
+a.content-button:focus,
+a.content-button:hover {
+    background: #B51C35;
+    color: #FFFCED;
+}
+
+
+/*--------------------------------------------------------------
+General styling
+--------------------------------------------------------------*/
+
+.site {
+    margin: 1em;
+}
+
+.masthead {
+    padding: 0;
+}
+
+.page-title,
+.main-content,
+.sidebar,
+.footer-content {
+    padding: 1em;
+    color: white;
+
+}
+
+.masthead {
+    background-color: #90B494;
+}
+
+.page-title {
+    background-color: #bcd8c1;
+}
+
+.main-content {
+    background-color: #232c33;
+}
+
+.sidebar {
+    background-color: #90B494;
+}
+
+.portfolio-grid {
+    display: grid;
+    justify-content: center;
+    /* why isnt this working */
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.item {
+    width: .25fr;
+    align-self: center;
+}
+
+.portfolio-grid .item {
+    position: relative;
+    padding-bottom: 100%;
+}
+
+.portfolio-grid .item img {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    max-width: 400px;
+    max-height: 400px;
+    object-fit: fill;
+}
+
+.portfolio-grid .item-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 400px;
+    height: auto;
+    color: white;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    text-align: center;
+}
+
+.portfolio-grid .item-info h3 {
+    margin-top: 0;
+}
+
+.portfolio-grid .item-info p {
+    margin-bottom: 0;
+}
+
+.footer-content {
+    background-color: #90B494;
+}
+
+.logo-style {
+    max-width: 50px;
+    padding: 10px;
+    float: left;
+}
+
+.profileimg {
+    max-width: 500px;
+}
